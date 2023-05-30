@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
-import HomePage from "./pages/Home";
+import Home from "./pages/Home";
 import './index.scss';
 import Layout from "./components/Layout/Layout";
 
 createBrowserRouter([
-  { path: '/', element: <HomePage />},
+  { path: '/', element: <Home />},
   { path: '/products' },
 ])
 
