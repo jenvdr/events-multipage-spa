@@ -1,7 +1,41 @@
 .Footer {
+    width: 100%;
     max-width: 60rem;
-    margin: auto;
+    margin: auto auto 0;
     padding: 2rem;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+
+    .Content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 3.2rem;
+    }
+
+    .List {
+        li {
+            margin-bottom: 1.2rem;
+        }
+    }
+
+    .Credits {
+        margin-left: auto;
+        display: flex;
+
+        p {
+            margin-left: 1.2rem;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--color-primary-400);
+    }
+    
+    a:hover,
+    a.Active {
+        color: var(--color-primary-800);
+    }
 }
