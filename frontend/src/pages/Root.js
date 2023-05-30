@@ -1,6 +1,7 @@
 import { Container } from 'react-bootstrap';
 import { Outlet } from 'react-router';
 import MainNavigation from "../components/Layout/MainNavigation/MainNavigation";
+import Footer from '../components/Layout/Footer/Footer';
 
 export default function RootLayout() {
     return (
@@ -11,6 +12,7 @@ export default function RootLayout() {
                     <Outlet />
                 </Container>
             </main>
+            <Footer />
         </>
     )
 }
