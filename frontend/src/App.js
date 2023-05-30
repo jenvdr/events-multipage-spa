@@ -1,16 +1,28 @@
-import { createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import './index.scss';
-import Layout from "./components/Layout/Layout";
+import Events from "./pages/Events";
+import EventDetail from "./pages/EventDetail";
+import EditEvent from "./pages/EditEvent";
+import NewEvent from "./pages/NewEvent";
+import MainNavigation from "./components/Layout/MainNavigation/MainNavigation";
 
-createBrowserRouter([
+const router = createBrowserRouter([
   { path: '/', element: <Home />},
-  { path: '/products' },
+  { path: '/events', element: <Events/> },
+  { path: '/events/:eventId', element: <EventDetail/> },
+  { path: '/events/new', element: <NewEvent/> },
+  { path: '/events/:eventId/edit', element: <EditEvent /> },
 ])
 
 function App() {
   return (
-    <Layout />
+    <>
+        <MainNavigation />
+        <main>
+            <RouterProvider router={router} />
+        </main>
+    </>
   )
 }
 
