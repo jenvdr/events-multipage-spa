@@ -4,7 +4,7 @@ import "./styles/globals.scss";
 import Events, { loader } from "./pages/Events";
 import EventDetail, { loader as eventDetailLoader } from "./pages/EventDetail";
 import EditEvent from "./pages/EditEvent";
-import NewEvent from "./pages/NewEvent";
+import NewEvent, { action as newEventAction } from "./pages/NewEvent";
 import RootLayout from "./pages/Root";
 import EventsRoot from "./pages/EventsRoot";
 import Error from "./pages/Error";
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
                             { path: "edit", element: <EditEvent /> },
                         ],
                     },
-                    { path: "new", element: <NewEvent /> },
+                    { path: "new", element: <NewEvent />, action: newEventAction},
                 ],
             },
         ],
