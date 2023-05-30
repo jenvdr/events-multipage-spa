@@ -5,25 +5,27 @@ import Events from "./pages/Events";
 import EventDetail from "./pages/EventDetail";
 import EditEvent from "./pages/EditEvent";
 import NewEvent from "./pages/NewEvent";
-import MainNavigation from "./components/Layout/MainNavigation/MainNavigation";
+import RootLayout from "./pages/Root";
 
 const router = createBrowserRouter([
-  { path: '/', element: <Home />},
-  { path: '/events', element: <Events/> },
-  { path: '/events/:eventId', element: <EventDetail/> },
-  { path: '/events/new', element: <NewEvent/> },
-  { path: '/events/:eventId/edit', element: <EditEvent /> },
+    {
+        path : '/',
+        element: <RootLayout />,
+        children: [
+            { index: true,  element: <Home />},
+            { path: 'events', element: <Events/> },
+            { path: 'events/:eventId', element: <EventDetail/> },
+            { path: 'events/new', element: <NewEvent/> },
+            { path: 'events/:eventId/edit', element: <EditEvent /> },
+    ]},
 ])
 
 function App() {
-  return (
-    <>
-        <MainNavigation />
-        <main>
+    return (
+        <>
             <RouterProvider router={router} />
-        </main>
-    </>
-  )
+        </>
+    )
 }
 
 export default App;
