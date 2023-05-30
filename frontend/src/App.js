@@ -1,5 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import HomePage from "./pages/Home";
+import './index.scss';
+import Layout from "./components/Layout/Layout";
 
 createBrowserRouter([
   { path: '/', element: <HomePage />},
@@ -7,7 +9,9 @@ createBrowserRouter([
 ])
 
 function App() {
-  return <div></div>;
+  return (
+    <Layout />
+  )
 }
 
 export default App;
